@@ -3,7 +3,9 @@ import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from "../types";
 
 export const getFashionAdvice = async (history: ChatMessage[], currentQuery: string): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  // Use a fallback or casting to avoid TS errors during the build while keeping the process.env requirement
+  const apiKey = (process.env as any).API_KEY || '';
+  const ai = new GoogleGenAI({ apiKey });
   
   const systemInstruction = `You are the Lead Stylist at "Style Studio", an ultra-luxury fashion boutique. 
   Your tone is sophisticated, knowledgeable, and exclusive. 
