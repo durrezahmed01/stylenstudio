@@ -1,0 +1,7 @@
+{
+  "name": "Style Studio - Luxury Fashion",
+  "description": "A high-end boutique fashion website with a sleek black and gold aesthetic, featuring a Gemini-powered personal stylist and live animations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
